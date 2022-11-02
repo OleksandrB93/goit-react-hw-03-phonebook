@@ -1,15 +1,14 @@
 import { nanoid } from "nanoid";
 import React, { Component } from "react";
-import PropTypes from 'prop-types'
-
-import { NameLabel,AddContactBtn, Input } from "./Phonebook.styled";
-
+import PropTypes from "prop-types";
+import { HiUserAdd } from "react-icons/hi";
+import { NameLabel, AddContactBtn, Input,IconAdd } from "./Phonebook.styled";
 
 export default class Phonebook extends Component {
   state = {
     name: "",
     phoneNumber: "",
-    img:"https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
+    img: "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
   };
 
   nameInputId = nanoid();
@@ -28,7 +27,7 @@ export default class Phonebook extends Component {
   };
 
   resetSubmit = () => {
-    this.setState({ name: "", phoneNumber: "", img:"" });
+    this.setState({ name: "", phoneNumber: "", img: "" });
   };
   render() {
     return (
@@ -45,6 +44,7 @@ export default class Phonebook extends Component {
               value={this.state.name}
               onChange={this.handleChange}
               id={this.nameInputId}
+              placeholder="Please write name"
             />
           </NameLabel>
           <label htmlFor={this.phoneNumberInputId}>
@@ -58,16 +58,19 @@ export default class Phonebook extends Component {
               value={this.state.phoneNumber}
               onChange={this.handleChange}
               id={this.phoneNumberInputId}
+              placeholder="Please write number"
             />
           </label>
-          <AddContactBtn tupe="submit">Add contact</AddContactBtn>
+          <AddContactBtn tupe="submit">
+            <HiUserAdd fill='#601c80'/>
+          </AddContactBtn>
         </form>
       </div>
     );
   }
 }
 Phonebook.prototypes = {
-    name: PropTypes.string.isRequired,
-    phoneNumber: PropTypes.string.isRequired,
-    onSubmit: PropTypes.func.isRequired,
-  };
+  name: PropTypes.string.isRequired,
+  phoneNumber: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};

@@ -45,6 +45,7 @@ export const UserInfo = styled.p`
 `;
 
 export const DeleteBtn = styled.button`
+padding: 5px;
   max-height: 25px;
   margin-left: auto;
   margin-right: 5px;
