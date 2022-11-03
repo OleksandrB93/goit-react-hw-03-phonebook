@@ -21,7 +21,7 @@ export default function ContactList({ contacts, deleteContact }) {
                 {name}: {phoneNumber}
               </UserInfo>
               <DeleteBtn type="button" onClick={() => deleteContact(id)}>
-                <HiOutlineTrash size='2em'/>
+                <HiOutlineTrash />
               </DeleteBtn>
             </Item>
           );
