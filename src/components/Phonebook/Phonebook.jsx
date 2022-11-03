@@ -62,7 +62,7 @@ export default class Phonebook extends Component {
             />
           </label>
           <AddContactBtn tupe="submit">
-            <HiUserAdd fill='#601c80' size='2em'/>
+            <HiUserAdd fill='#601c80' />
           </AddContactBtn>
         </form>
       </div>
